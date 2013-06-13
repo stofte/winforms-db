@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace DvdRental.Core.Models
 {
-    public class Genre
+    public class Genre : DvdRental.Core.Models.Generated.Genre
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-
         public override string ToString()
         {
             return Name;

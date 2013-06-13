@@ -9,15 +9,8 @@ using DvdRental.Core.Components;
 
 namespace DvdRental.Core.Models
 {
-    public class Dvd
+    public class Dvd : DvdRental.Core.Models.Generated.Dvd
     {
-        public int Id { get; set; }
-        public string Title { get; set; }
-        public int? ReleaseYear { get; set; }
-        public string Description { get; set; }
-        public int Genre { get; set; }
-        public byte[] Poster { get; set; }
-
         public override string ToString()
         {
             return Title;
@@ -27,7 +20,7 @@ namespace DvdRental.Core.Models
         {
             if (img == null) return;
             MemoryStream ms = new MemoryStream();
-            img.Save(ms, System.Drawing.Imaging.ImageFormat.Gif);
+            img.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
             Poster = ms.ToArray();
         }
 
